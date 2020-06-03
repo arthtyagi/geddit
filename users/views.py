@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.views.generic.edit import FormView
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
+
+
+class RegisterView(FormView):
+    
 
 def register(request):
     if request.method == 'POST':
