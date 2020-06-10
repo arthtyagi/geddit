@@ -1,3 +1,4 @@
+# todo - update the urls.py with private and public mode urls
 from django.urls import path
 from .import views
 from .views import NotesCreateView, NotesListView, NotesUpdateView, NotesDeleteView, NotesDetailView
