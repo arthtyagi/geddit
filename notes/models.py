@@ -1,9 +1,10 @@
+#!/usr/bin/env python3
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 
 
-class Notes(models.Model):
+class Notes(models.Model)title:
     title = models.CharField(max_length=50)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
