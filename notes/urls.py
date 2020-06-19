@@ -6,7 +6,8 @@ from .views import NotesCreateView, NotesListView, NotesUpdateView, NotesDeleteV
 app_name = 'notes'
 
 urlpatterns = [
-    path('', NotesListView.as_view(), name='list'),
+    path('', views.home, name='home'),
+    path('notes/', NotesListView.as_view(), name='list'),    
     path('notes/<int:pk>/', NotesDetailView.as_view(), name='detail'),
     path('notes/new/', NotesCreateView.as_view(), name='create'),
     path('notes/<int:pk>/update/', NotesUpdateView.as_view(), name='update'),

@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
-class Notes(models.Model)title:
+class Notes(models.Model):
     title = models.CharField(max_length=50)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
