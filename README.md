@@ -28,4 +28,8 @@ Done.
  - [ ] Support Markdown
  - [ ] Support Rich Text Editing
  
+### What does that look like right now?
+
+![image](https://user-images.githubusercontent.com/41021374/85224309-f4416d80-b3e6-11ea-83bd-a5bb765611d8.png)
+
 Note : I won't be deploying this to production anytime soon.
