@@ -15,9 +15,21 @@ The To-Do app will be built using the same technologies as the Notes module.
 
 - [X] Notes specific to individual users.
 - [X] Signin using Email. 
-- [ ] To-do Lists specific to individual users.
-### Projected Timeline :
+- [X] To-do Lists specific to individual users.
+### Projected Timeline:
 
-31st May, 2020.
+Done.
 
-Note : I won't be deploying this to production.
+### Fun shit :
+ - [ ] Adding date picker
+ - [ ] Redoing the UI in React.js
+ - [ ] Public and Private Notes and Tasks.
+ - [ ] Adding a How-To use this animator.
+ - [ ] Support Markdown
+ - [ ] Support Rich Text Editing
+ 
+### What does that look like right now?
+
+![image](https://user-images.githubusercontent.com/41021374/85224309-f4416d80-b3e6-11ea-83bd-a5bb765611d8.png)
+
+Note : I won't be deploying this to production anytime soon.
