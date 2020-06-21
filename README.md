@@ -27,6 +27,5 @@ Done.
  - [ ] Adding a How-To use this animator.
  - [ ] Support Markdown
  - [ ] Support Rich Text Editing
- - [ ] Add FAQs
-
-Note : I won't be deploying this to production.
+ 
+Note : I won't be deploying this to production anytime soon.
