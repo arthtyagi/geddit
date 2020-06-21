@@ -5,12 +5,9 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Todo
 
 
-def about(request):
-    return render(request, 'todo/about.html', {'title':'About'})
-
 class TodoListView(LoginRequiredMixin, ListView):
     model = Todo
-    context_object_name = 'Todo'
+    context_object_name = 'todo'
 
     def get_queryset(self):
         return Todo.objects.filter(user=self.request.user)

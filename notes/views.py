@@ -5,6 +5,10 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Notes
 
 
+
+def home(request):
+    return render(request, 'notes/home.html', {'title':'Home'})
+
 def about(request):
     return render(request, 'notes/about.html', {'title':'About'})
 

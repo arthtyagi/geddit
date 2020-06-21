@@ -1,0 +1,16 @@
+{% extends "notes/base.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Delete Task</legend>
+                <h2>This action means you have completed the task"{{ object.title }}"</h2>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Yes, delete. I finished the task.</button>
+                <a class="btn btn-outline-secondary" href="{% url 'notes:detail' object.id %}">Some of it is left actually :P</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

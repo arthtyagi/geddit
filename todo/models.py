@@ -8,8 +8,8 @@ class Todo(models.Model):
 	content = models.CharField(max_length = 550)
 	created = models.DateTimeField(auto_now_add=True)
 
-def __str__(self):
-	return self.title
+	def __str__(self):
+		return self.title
         
 	def get_absolute_url(self):
 		return reverse('todo:detail', kwargs={'pk': self.pk})
