@@ -1,1 +1,5 @@
 {%extends "notes/base.html"%}
+{% block content%}
+<h1><a href="{%url 'notes:list'%}">Go to Notes</a></h1>
+<h2><a href="{%url 'todo:list'%}">Go to To-Do</a></h2>
+{%endblock content%}

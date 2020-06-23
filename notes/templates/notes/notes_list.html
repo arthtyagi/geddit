@@ -1,12 +1,15 @@
 {% extends "notes/base.html" %}
+{%load countit%}
 {% block content %}
-<h1>Your Notes :)</h1>
+
+<h1>Your Notes :) || {%count_posts_of user%} notes so far.</h1>
 {% for notes in notes %}
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ notes.user.profile.image.url }}">
     <div class="media-body">
         <div class="article-metadata">
-            <small class="text-muted">{{ note.created|date:"F d, Y" }}</small>
+            <small class="text-muted">Last modified on {{ notes.last_modified|date:"F d, Y" }}</small>
+            <small class="text-muted">and created on {{ notes.created|date:"F d, Y" }}</small>
         </div>
         <h2><a class="article-title" href="{% url 'notes:detail' notes.id %}">{{ notes.title }}</a></h2>
         <p class="article-content">{{ notes.content| truncatewords_html:30 }}</p>
