@@ -30,6 +30,9 @@ Done.
  
 ### What does that look like right now?
 
-![image](https://user-images.githubusercontent.com/41021374/85224309-f4416d80-b3e6-11ea-83bd-a5bb765611d8.png)
+![todohome](https://user-images.githubusercontent.com/41021374/85363690-2665e300-b53f-11ea-830f-b86c31b38047.png)
+![todoedit](https://user-images.githubusercontent.com/41021374/85363703-2d8cf100-b53f-11ea-9737-b3491978ace3.png)
+![tododelete](https://user-images.githubusercontent.com/41021374/85363710-31207800-b53f-11ea-958c-ecd8ce99582f.png)
+![noteshome](https://user-images.githubusercontent.com/41021374/85363711-3382d200-b53f-11ea-8af1-fafac6f02300.png)
 
 Note : I won't be deploying this to production anytime soon.
