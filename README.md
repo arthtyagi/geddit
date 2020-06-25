@@ -4,12 +4,11 @@
 ![PyPI - Implementation](https://img.shields.io/pypi/implementation/django?color=green)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/django)
 ![GitHub Pipenv locked Python version (branch)](https://img.shields.io/github/pipenv/locked/python-version/arthtyagi/geddit/master?color=black&style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/arthtyagi/geddit/master?style=for-the-badge)
 
 # Geddit
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Geddit is an open-source web app that allows you to keep Notes and To-Do lists powered by a Django backend.
 
