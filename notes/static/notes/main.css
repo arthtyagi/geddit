@@ -1,8 +1,9 @@
-body {
-    background: #fafafa;
-    color: #333333;
+
+  body {
+    background-image: url( http://api.thumbr.it/whitenoise-361x370.png?background=fffff2ff&noise=7a7a7a&density=25&opacity=15);
+    font-family: 'Raleway', sans-serif;
     margin-top: 5rem;
-  }
+}
   
   h1, h2, h3, h4, h5, h6 {
     color: #444444;
@@ -13,11 +14,12 @@ body {
   }
   
   .bg-steel {
-    background-color: #052033;
+    background-color: #141414;
   }
   
   .site-header .navbar-nav .nav-link {
-    color: #ffffff;
+    color: #ebebeb;
+    font-family: 'Roboto', sans-serif;
   }
   
   .site-header .navbar-nav .nav-link:hover {
@@ -29,7 +31,7 @@ body {
   }
   
   .content-section {
-    background: #ffffff;
+    background-image:repeat 0 0;
     padding: 10px 20px;
     border: 1px solid #dddddd;
     border-radius: 3px;
