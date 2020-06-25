@@ -54,7 +54,7 @@ class NotesDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class NotesCreateView(LoginRequiredMixin, CreateView):
 		model = Notes
-		fields = ['title', 'content', 'categ']
+		fields = ['title', 'content', 'category']
 		success_url = reverse_lazy('notes:list')
 
 		def form_valid(self, form):
