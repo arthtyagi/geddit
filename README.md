@@ -1,5 +1,5 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/arthtyagi/geddit) 
-(![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django?style=for-the-badge)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django?style=flat-square)
 # Geddit
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
