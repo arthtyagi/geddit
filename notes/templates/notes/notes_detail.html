@@ -5,6 +5,7 @@
     <div class="media-body">
         <div class="article-metadata">
             <small class="text-muted">{{ object.created|date:"F d, Y" }}</small>
+            <span class="badge badge-info">{{object.category}}</span>
             {% if object.user == user %}
             <div>
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'notes:update' object.id %}">Update</a>

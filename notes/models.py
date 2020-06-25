@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 from django.contrib.auth.models import User
 
 
 class Notes(models.Model):
     title = models.CharField(max_length=50)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE) 
     content = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
-
+    category = models.CharField(max_length =10, default = "CS")
+    slug = models.SlugField(max_length=250,unique_for_date='created', default = timezone.now)
     def __str__(self):
         return self.title
 
