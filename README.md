@@ -36,9 +36,9 @@ Done.
  
 ### What does that look like right now?
 
-![todohome](https://user-images.githubusercontent.com/41021374/85363690-2665e300-b53f-11ea-830f-b86c31b38047.png)
-![todoedit](https://user-images.githubusercontent.com/41021374/85363703-2d8cf100-b53f-11ea-9737-b3491978ace3.png)
-![tododelete](https://user-images.githubusercontent.com/41021374/85363710-31207800-b53f-11ea-958c-ecd8ce99582f.png)
-![noteshome](https://user-images.githubusercontent.com/41021374/85363711-3382d200-b53f-11ea-8af1-fafac6f02300.png)
+![image](https://user-images.githubusercontent.com/41021374/85722673-2832d080-b710-11ea-8bb6-641df8f370e7.png)
+![image](https://user-images.githubusercontent.com/41021374/85722908-5dd7b980-b710-11ea-8c75-e96614a4cce5.png)
+![image](https://user-images.githubusercontent.com/41021374/85722972-6c25d580-b710-11ea-9b41-ae1157f64c18.png)
+![image](https://user-images.githubusercontent.com/41021374/85723060-7ea00f00-b710-11ea-9c06-35d042587638.png)
 
-Note : I won't be deploying this to production anytime soon.
+Skeleton Project of DomeCode with similar components. Used for testing purposes.
