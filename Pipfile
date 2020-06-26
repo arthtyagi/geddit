@@ -13,6 +13,9 @@ django-crispy-forms = "*"
 pillow = "*"
 coverage = "*"
 model-bakery = "*"
+djangorestframework = "*"
+markdown = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.8"
