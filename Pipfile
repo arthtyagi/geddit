@@ -16,6 +16,7 @@ model-bakery = "*"
 djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
+lazy-object-proxy = "*"
 
 [requires]
 python_version = "3.8"
