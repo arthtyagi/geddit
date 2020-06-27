@@ -5,4 +5,4 @@ register = template.Library()
 
 @register.simple_tag
 def count_posts_of(user):
-    return Todo.objects.filter(user =user).count()
+	return Todo.objects.filter(user =user).count()
