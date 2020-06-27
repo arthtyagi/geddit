@@ -4,6 +4,11 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Todo
+from django.http import JsonResponse
+
+
+def apiOverview(request):
+	return JsonResponse("API Base Point",safe = False)
 
 
 class TodoListView(LoginRequiredMixin, ListView):

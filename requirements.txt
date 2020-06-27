@@ -2,7 +2,10 @@
 asgiref==3.2.10; python_version >= '3.5'
 coverage==5.1
 django-crispy-forms==1.9.1
+django-filter==2.3.0
 django==3.0.7
+djangorestframework==3.11.0
+markdown==3.2.2
 model-bakery==1.1.0
 pillow==7.1.2
 pytz==2020.1
