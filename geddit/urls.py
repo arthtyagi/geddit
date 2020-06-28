@@ -37,9 +37,12 @@ urlpatterns = [
 		template_name='users/password_reset_complete.html'), name='password_reset_complete'),
 	path('', include('notes.urls')),
 	path('',include('todo.urls')),
-	path('api-auth/', include('rest_framework.urls'))
-]
+	path('api-auth/', include('rest_framework.urls')),
 
+
+# REST FRAMEWORK URLS
+	path('api/todo/', include('todo.api.urls', 'todo_api')),
+]
 if settings.DEBUG:
 	urlpatterns += static(settings.MEDIA_URL,
 						  document_root=settings.MEDIA_ROOT)
