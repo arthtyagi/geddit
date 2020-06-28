@@ -17,6 +17,7 @@ djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
 lazy-object-proxy = "*"
+pygments = "*"
 
 [requires]
 python_version = "3.8"

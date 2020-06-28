@@ -7,9 +7,6 @@ from .models import Todo
 from django.http import JsonResponse
 
 
-def apiOverview(request):
-	return JsonResponse("API Base Point",safe = False)
-
 
 class TodoListView(LoginRequiredMixin, ListView):
 	model = Todo
