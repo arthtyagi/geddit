@@ -11,6 +11,7 @@ class Notes(models.Model):
 	created = models.DateTimeField(auto_now_add=True)
 	last_modified = models.DateTimeField(auto_now=True)
 	category = models.CharField(max_length =25, default = "CS")
+	image = models.ImageField(upload_to = 'cars', default = 'default.jpg')
 	slug = models.SlugField(max_length=250,unique_for_date='created', default = timezone.now)
 	def __str__(self):
 		return self.title

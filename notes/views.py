@@ -22,7 +22,7 @@ class NotesListView(LoginRequiredMixin, ListView):
 class NotesUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 		model = Notes
 		success_url = reverse_lazy('notes:list')
-		fields = ['title', 'content', 'category']
+		fields = ['title', 'content', 'category', 'image']
 
 		def form_valid(self, form):
 				form.instance.user = self.request.user
@@ -54,7 +54,7 @@ class NotesDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class NotesCreateView(LoginRequiredMixin, CreateView):
 		model = Notes
-		fields = ['title', 'content', 'category']
+		fields = ['title', 'content', 'category', 'image']
 		success_url = reverse_lazy('notes:list')
 
 		def form_valid(self, form):
