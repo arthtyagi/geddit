@@ -18,6 +18,8 @@ markdown = "*"
 django-filter = "*"
 lazy-object-proxy = "*"
 pygments = "*"
+django-cryptography = "*"
+django-oauth-toolkit = "*"
 
 [requires]
 python_version = "3.8"

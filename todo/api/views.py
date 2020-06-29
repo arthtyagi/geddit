@@ -1,12 +1,24 @@
 from todo.models import Todo
 from todo.api.serializers import TodoSerializer
 from django.http import Http404
-from rest_framework import mixins
-from rest_framework import generics
+from rest_framework import generics, permissions, serializers
+from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
 
-class TodoList(mixins.ListModelMixin,
-				  mixins.CreateModelMixin,
-				  generics.GenericAPIView):
+class TodoList(generics.ListCreateAPIView):
+
+	queryset = Todo.objects.all()
+	serializer_class = TodoSerializer
+
+
+class TodoDetail(generics.RetrieveUpdateDestroyAPIView):
+
+	queryset = Todo.objects.all()
+	serializer_class = TodoSerializer
+
+
+"""
+from rest_framework import mixins
+class TodoList(mixins.ListModelMixin,mixins.CreateModelMixin,generics.GenericAPIView):
 	queryset = Todo.objects.all()
 	serializer_class = TodoSerializer
 
@@ -15,12 +27,7 @@ class TodoList(mixins.ListModelMixin,
 
 	def post(self, request, *args, **kwargs):
 		return self.create(request, *args, **kwargs)
-
-
-class TodoDetail(mixins.RetrieveModelMixin,
-					mixins.UpdateModelMixin,
-					mixins.DestroyModelMixin,
-					generics.GenericAPIView):
+class TodoDetail(mixins.RetrieveModelMixin,	mixins.UpdateModelMixin,mixins.DestroyModelMixin,generics.GenericAPIView):
 	queryset = Todo.objects.all()
 	serializer_class = TodoSerializer
 
@@ -32,3 +39,4 @@ class TodoDetail(mixins.RetrieveModelMixin,
 
 	def delete(self, request, *args, **kwargs):
 		return self.destroy(request, *args, **kwargs)
+"""
