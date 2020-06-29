@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<h1>Your Notes :) || Total Notes {%count_posts_of user%} notes so far.</h1>
+<h1>Your Notes || Total Notes : {%count_posts_of user%}</h1>
 {% for notes in notes %}
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ notes.user.profile.image.url }}">
