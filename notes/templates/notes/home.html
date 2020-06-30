@@ -1,5 +1,5 @@
 {%extends "notes/base.html"%}
- {% block content%}
+{% block content%}
 <div class="row">
 	<div class="col-sm-6">
 		<div class="card-deck">
@@ -14,15 +14,15 @@
 			</div>
 		</div>
 	</div>
-<br>
-<br> 
+	<br>
+	<br>
 	<div class="col-sm-6">
 		<div class="card-deck">
 			<div class="card-body">
-				<img class="card-img-top" src="static/notes/tasks.png" alt="Card image cap"> 
+				<img class="card-img-top" src="static/notes/tasks.png" alt="Card image cap">
 				<h5 class="card-title">TASKS</h5>
 				<p class="card-text">
-						List the tasks you feel like finishing on here.
+					List the tasks you feel like finishing on here.
 				</p>
 				<a href="{%url 'todo:list'%}" class="btn btn-primary">Go to your tasks</a>
 			</div>

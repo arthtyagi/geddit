@@ -2,8 +2,20 @@
 {%load countit%}
 {% load crispy_forms_tags %}
 {% block content %}
+<div class="col-sm-6">
+    <div class="card-deck">
+        <form class="form-inline" method="GET" action="/notes/">
+            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">🔍</button>
+        </form>
+    </div>
+</div>
 
-<h1>Your Notes || Total Notes : {%count_posts_of user%}</h1>
+<br>
+
+<h1>Your Notes</h1>
+<span class="badge badge-pill badge-dark">You have made a total of {%count_posts_of user%} notes.</span>
+<br><br>
 {% for notes in notes %}
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ notes.user.profile.image.url }}">

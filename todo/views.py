@@ -4,13 +4,23 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Todo
-
+from django.db.models import Q
 class TodoListView(LoginRequiredMixin, ListView):
 	model = Todo
 	context_object_name = 'todo'
 
-	def get_queryset(self):
-		return Todo.objects.filter(user=self.request.user).order_by('-created')
+	def get_queryset(self, *args, **kwargs):
+		object_list = super(TodoListView, self).get_queryset(*args, **kwargs)
+		search = self.request.GET.get('q', None)
+		if search:
+			object_list = object_list.filter( 
+				Q(title__contains=search, user = self.request.user)|
+				Q(content__contains=search, user = self.request.user)
+				).order_by('created')
+			return object_list
+		if search is None:
+			object_list =Todo.objects.filter(user=self.request.user).order_by('created')
+			return object_list	
 
 
 class TodoUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
