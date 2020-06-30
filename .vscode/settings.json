@@ -1,0 +1,6 @@
+{ 
+    "python.pythonPath": "/Users/arthtyagi/.local/share/virtualenvs/geddit-JoE5XbwA/bin/python",
+    "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true
+}

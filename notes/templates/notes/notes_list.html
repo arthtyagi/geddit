@@ -1,0 +1,33 @@
+{% extends "notes/base.html" %}
+{%load countit%}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-sm-6">
+    <div class="card-deck">
+        <form class="form-inline" method="GET" action="/notes/">
+            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">🔍</button>
+        </form>
+    </div>
+</div>
+
+<br>
+
+<h1>Your Notes</h1>
+<span class="badge badge-pill badge-dark">You have made a total of {%count_posts_of user%} notes.</span>
+<br><br>
+{% for notes in notes %}
+<article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ notes.user.profile.image.url }}">
+    <div class="media-body">
+        <div class="article-metadata">
+            <small class="text-muted">Last modified on {{ notes.last_modified|date:"F d, Y" }}</small>
+            <small class="text-muted">and created on {{ notes.created|date:"F d, Y" }}</small>
+        </div>
+        <span class="badge badge-info">{{notes.category}}</span>
+        <h2><a class="article-title" href="{% url 'notes:detail' notes.id %}">{{ notes.title }}</a></h2>
+        <p class="article-content">{{ notes.content| truncatewords_html:30 }}</p>
+    </div>
+</article>
+{% endfor %}
+{% endblock content %}
