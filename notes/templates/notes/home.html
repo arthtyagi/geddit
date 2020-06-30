@@ -1,26 +1,26 @@
 {%extends "notes/base.html"%}
 {% block content%}
 <div class="row">
-	<div class="col-sm-6">
+	<div class="col-md-5 ml-md-auto">
 		<div class="card-deck">
 			<div class="card-body">
 				<img class="card-img-top" src="static/notes/notes.png" alt="Card image cap">
-				<h5 class="card-title">NOTES</h5>
+				<br><br><br>
+				<h5 class="card-title" style="color:antiquewhite;">NOTES</h5>
 				<p class="card-text">
-					Your notes lie here. You can label your notes as well.Your plans on
+					Your notes lie here. You can label your notes as well. Your plans on
 					learning code, music or maybe something else?
 				</p>
 				<a href="{%url 'notes:list'%}" class="btn btn-primary">Go check your notes</a>
 			</div>
 		</div>
 	</div>
-	<br>
-	<br>
-	<div class="col-sm-6">
+	<div class="col-md-5 ml-md-auto">
 		<div class="card-deck">
 			<div class="card-body">
 				<img class="card-img-top" src="static/notes/tasks.png" alt="Card image cap">
-				<h5 class="card-title">TASKS</h5>
+				<br><br><br>
+				<h5 class="card-title" style="color: antiquewhite;">TASKS</h5>
 				<p class="card-text">
 					List the tasks you feel like finishing on here.
 				</p>
