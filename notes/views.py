@@ -24,10 +24,11 @@ class NotesListView(LoginRequiredMixin, ListView):
 		if search:
 			object_list = object_list.filter( 
 				Q(title__contains=search, user = self.request.user)|
-				Q(content__contains=search, user = self.request.user)
+				Q(content__contains=search, user = self.request.user)|
+				Q(category__contains=search, user = self.request.user)	
 				).order_by('-last_modified')
 			return object_list
-		if search is None:
+		else:
 			object_list = Notes.objects.filter(user=self.request.user).order_by('-last_modified')
 			return object_list
 
@@ -36,7 +37,7 @@ class NotesListView(LoginRequiredMixin, ListView):
 class NotesUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	model = Notes
 	success_url = reverse_lazy('notes:list')
-	fields = ['title', 'content', 'category', 'image']
+	fields = ['title', 'content', 'category']
 
 	def form_valid(self, form):
 		form.instance.user = self.request.user
@@ -69,7 +70,7 @@ class NotesDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class NotesCreateView(LoginRequiredMixin, CreateView):
 	model = Notes
-	fields = ['title', 'content', 'category', 'image']
+	fields = ['title', 'content', 'category']
 	success_url = reverse_lazy('notes:list')
 
 	def form_valid(self, form):

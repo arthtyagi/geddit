@@ -13,10 +13,7 @@
       {% endif %}
     </div>
     <h2 class="article-title">{{ object.title }}</h2>
-    {% if object.image %}
-    <img src="{{ object.image.url }}" />
-    {% endif %}
-    <p class="article-content">{{ object.content }}</p>
+    {{object.content|safe}}
   </div>
 </article>
 {% endblock content %}

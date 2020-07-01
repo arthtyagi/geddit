@@ -1,19 +1,16 @@
 from todo.models import Todo
 from todo.api.serializers import TodoSerializer
-from django.http import Http404
-from rest_framework import generics, permissions, serializers
-from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
+from rest_framework import generics
+
 
 class TodoList(generics.ListCreateAPIView):
-
-	queryset = Todo.objects.all()
-	serializer_class = TodoSerializer
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerializer
 
 
 class TodoDetail(generics.RetrieveUpdateDestroyAPIView):
-
-	queryset = Todo.objects.all()
-	serializer_class = TodoSerializer
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerializer
 
 
 """
