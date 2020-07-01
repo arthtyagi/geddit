@@ -13,12 +13,17 @@
 
 # Geddit
 
-Geddit is an open-source web app that allows you to keep Notes and To-Do lists powered by a Django backend.
+Geddit is an open-source web app that is essentially a skeleton project of DomeCode with similar components. It is being used for testing purposes.
+The project has two modules, the Notes app and the To-Do app and other upcoming modules : 
 
-The project has two modules, the Notes app and the To-Do app : 
 
-The Notes module is made using Django, Bootstrap and well, DHTML.
-The To-Do app will be built using the same technologies as the Notes module.
+The Notes module is made using Django, Bootstrap and well, DHTML. React.js soon! 🍻
+
+## Upcoming Modules :
+
+- Forums
+- Resumé
+- FAQ
 
 ## TO-DO :
 
@@ -39,8 +44,8 @@ Well as of now, it has a fairly good responsive UI, notes, tasks, a search bar, 
  - [ ] Redoing the UI in React.js
  - [ ] Public and Private Notes and Tasks.
  - [ ] Adding a How-To use this animator.
- - [ ] Support Markdown
- - [ ] Support Rich Text Editing
+ - [X] Support Markdown
+ - [X] Support Rich Text Editing
  
 ### What does that look like right now?
 
