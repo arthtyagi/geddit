@@ -14,10 +14,14 @@
 # Geddit
 
 Geddit is an open-source web app that is essentially a skeleton project of DomeCode with similar components. It is being used for testing purposes.
-The project has two modules, the Notes app and the To-Do app and other upcoming modules : 
+The project has two modules, the Notes app and the To-Do app and other upcoming modules.
 
 
-The Notes module is made using Django, Bootstrap and well, DHTML. React.js soon! 🍻
+The modules are made using :
+- Django, 🦄
+- Bootstrap 🎃 and well, 
+- DHTML 👀
+- React.js soon! 🍻
 
 ## Upcoming Modules :
 
