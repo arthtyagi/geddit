@@ -58,6 +58,7 @@ urlpatterns = [
 	path('',include('todo.urls')),
 	path('api-auth/', include('rest_framework.urls')),
 	path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+	path('ckeditor/', include('ckeditor_uploader.urls')),
 
 
 # REST FRAMEWORK URLS

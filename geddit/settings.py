@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'social_django',
-    'oauth2_provider'
+    'oauth2_provider',
+    'ckeditor',
+    'ckeditor_uploader'
+    
 ]
 
 
@@ -159,6 +162,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'notes/static/')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
@@ -168,3 +172,14 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'notes:home'
 LOGOUT_REDIRECT_URL = 'login'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+'default': {
+    'toolbar': 'auto', #You can change this based on your requirements.
+    'width': 'auto',
+    'height':'auto'
+
+          },
+    }

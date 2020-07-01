@@ -2,17 +2,16 @@
 {%load countit%}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="col-sm-6">
+<div class="col-sm-5">
     <div class="card-deck">
         <form class="form-inline" method="GET" action="/notes/">
-            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">🔍</button>
+            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search content" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search 🔍</button>
         </form>
     </div>
 </div>
-
 <br>
-
+<!--Improve Search with Incremental Search (AJAX and JQuery)--> 
 <h1>Your Notes</h1>
 <span class="badge badge-pill badge-dark">You have made a total of {%count_posts_of user%} notes.</span>
 <br><br>
@@ -26,7 +25,7 @@
         </div>
         <span class="badge badge-info">{{notes.category}}</span>
         <h2><a class="article-title" href="{% url 'notes:detail' notes.id %}">{{ notes.title }}</a></h2>
-        <p class="article-content">{{ notes.content| truncatewords_html:30 }}</p>
+        <p class="article-content">{{ notes.content|safe|truncatewords_html:30 }}</p>
     </div>
 </article>
 {% endfor %}

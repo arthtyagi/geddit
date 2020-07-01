@@ -1,6 +1,9 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/arthtyagi/geddit) 
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django?style=flat-square)
 [![Requirements Status](https://requires.io/github/arthtyagi/geddit/requirements.svg?branch=master)](https://requires.io/github/arthtyagi/geddit/requirements/?branch=master)
+![GitHub top language](https://img.shields.io/github/languages/top/arthtyagi/geddit)
+![GitHub Pipenv locked dependency version (branch)](https://img.shields.io/github/pipenv/locked/dependency-version/arthtyagi/geddit/django/master)
+
 ![PyPI - Implementation](https://img.shields.io/pypi/implementation/django?color=green)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/django)
 ![GitHub Pipenv locked Python version (branch)](https://img.shields.io/github/pipenv/locked/python-version/arthtyagi/geddit/master?color=black&style=flat-square)
@@ -17,14 +20,19 @@ The project has two modules, the Notes app and the To-Do app :
 The Notes module is made using Django, Bootstrap and well, DHTML.
 The To-Do app will be built using the same technologies as the Notes module.
 
-### TO-DO :
+## TO-DO :
 
 - [X] Notes specific to individual users.
 - [X] Signin using Email. 
 - [X] To-do Lists specific to individual users.
 ### Projected Timeline:
 
-Done.
+There's no such thing as timeline for Geddit, it's a project that will have various branches and will be a skeleton project to test new project. Albeit, a sandbox. So yeah, have at it! Fork this thing.
+
+
+### What's new?
+
+Well as of now, it has a fairly good responsive UI, notes, tasks, a search bar, Github Login, an upcoming forum, labels and images in notes. Increased the security of this repo by using decouple. More on the way since essentially all of these features are being ported over by me to [DomeCode](https://arthtyagi.me/domecode) except they'll be more polished and would hopefully make the end user spend more time on the application. ( Application since it'll be a PWA i.e. a Progressive Web Application as well ).
 
 ### Fun shit :
  - [ ] Adding date picker
