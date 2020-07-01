@@ -1,0 +1,30 @@
+{% extends "notes/base.html" %}
+{%load countodo%}
+{% block content %}
+<div class="col-sm-6">
+    <div class="card-deck">
+        <form class="form-inline" method="GET" action="/todo/">
+            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">🔍</button>
+        </form>
+    </div>
+</div>
+<br>
+<h1>Your Tasks</h1>
+<span class="badge badge-pill badge-dark">You have a total of {%count_posts_of user%} task(s).</span>
+<br><br>
+
+{% for todo in todo %}
+
+<article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ todo.user.profile.image.url }}">
+    <div class="media-body">
+        <div class="article-metadata">
+            <small class="text-muted">{{ todo.created|date:"F d, Y" }}</small>
+        </div>
+        <h2><a class="article-title" href="{% url 'todo:detail' todo.id %}">{{ todo.title }}</a></h2>
+        <p class="article-content">{{ todo.content| truncatewords_html:30 }}</p>
+    </div>
+</article>
+{% endfor %}
+{% endblock content %}
