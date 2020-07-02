@@ -13,6 +13,8 @@
 
 # Geddit
 
+![code](https://user-images.githubusercontent.com/41021374/86321791-5441da80-bc57-11ea-8e18-703536045d40.png)
+
 Geddit is an open-source web app that is essentially a skeleton project of DomeCode with similar components. It is being used for testing purposes.
 The project has two modules, the Notes app and the To-Do app and other upcoming modules.
 
