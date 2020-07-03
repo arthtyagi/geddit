@@ -11,7 +11,7 @@
 
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/arthtyagi/geddit/master?style=for-the-badge)
 
-# Geddit
+# Geddit 🦄
 
 ![code (2)](https://user-images.githubusercontent.com/41021374/86322013-c1ee0680-bc57-11ea-8152-ca67856d9df4.png)
 
@@ -20,7 +20,7 @@ The project has two modules, the Notes app and the To-Do app and other upcoming 
 
 
 The modules are made using :
-- Django, 🦄
+- Django, 🐍
 - Bootstrap 🎃 and well, 
 - DHTML 👀
 - React.js soon! 🍻
