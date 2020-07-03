@@ -3,19 +3,19 @@
 {% block content %}
 <div class="col-sm-6">
     <div class="card-deck">
-        <form class="form-inline" method="GET" action="/todo/">
+        <form class="form-inline" method="GET" autocomplete="off" action="/todo/">
             <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">🔍</button>
         </form>
     </div>
 </div>
 <br>
+
 <h1>Your Tasks</h1>
-<span class="badge badge-pill badge-dark">You have a total of {%count_posts_of user%} task(s).</span>
+<span class="badge badge-pill badge-dark">Hi {{user.first_name}}, you have a total of {%count_posts_of user%}
+    task(s).</span>
 <br><br>
-
 {% for todo in todo %}
-
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ todo.user.profile.image.url }}">
     <div class="media-body">
@@ -27,4 +27,33 @@
     </div>
 </article>
 {% endfor %}
+
+<ul class="pagination pg-grey justify-content-center">
+    {% if page_obj.has_previous %}
+    <li class="page-item">
+        <a class="page-link"
+            href="?{% if query %}q={{query}}&{% endif %}page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
+    </li>
+    {% endif %}
+
+    {% for i in page_obj.paginator.page_range %}
+    {% if page_obj.number == i %}
+    <li class="page-item active"><a class="page-link">{{ i }}</a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?{% if query %}q={{query}}&{% endif %}page={{ i }}">{{ i }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <li class="page-item">
+        <a class="page-link" href="?{% if query %}q={{query}}&{% endif %}page={{ page_obj.next_page_number }}">Next</a>
+    </li>
+    <li class="page-item">
+        <a class="page-link" href="?{% if query %}q={{query}}&{% endif %}page={{ page_obj.paginator.num_pages }}">Last
+            &raquo;</a>
+    </li>
+    {% endif %}
+</ul>
+
 {% endblock content %}

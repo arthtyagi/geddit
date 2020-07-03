@@ -3,6 +3,7 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 from .models import Notes
+from django.core.paginator import Paginator
 from django.db.models import Q
 
 
@@ -17,21 +18,22 @@ def about(request):
 class NotesListView(LoginRequiredMixin, ListView):
 	model = Notes
 	context_object_name = 'notes'
+	paginate_by =10 
 
 	def get_queryset(self, *args, **kwargs):
 		object_list = super(NotesListView, self).get_queryset(*args, **kwargs)
 		search = self.request.GET.get('q', None)
 		if search:
-			object_list = object_list.filter( 
-				Q(title__contains=search, user = self.request.user)|
-				Q(content__contains=search, user = self.request.user)|
-				Q(category__contains=search, user = self.request.user)	
-				).order_by('-last_modified')
+			object_list = object_list.filter(
+				Q(title__contains=search, user=self.request.user) |
+				Q(content__contains=search, user=self.request.user) |
+				Q(category__contains=search, user=self.request.user)
+			).order_by('-last_modified')
 			return object_list
 		else:
-			object_list = Notes.objects.filter(user=self.request.user).order_by('-last_modified')
+			object_list = Notes.objects.filter(
+				user=self.request.user).order_by('-last_modified')
 			return object_list
-
 
 
 class NotesUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -76,4 +78,3 @@ class NotesCreateView(LoginRequiredMixin, CreateView):
 	def form_valid(self, form):
 		form.instance.user = self.request.user
 		return super().form_valid(form)
-
