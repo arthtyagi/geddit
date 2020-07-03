@@ -23,6 +23,7 @@ pillow = "*"
 social-auth-app-django = "*"
 python-decouple = "*"
 django-ckeditor = "*"
+httpie = "*"
 
 [requires]
 python_version = "3.8"

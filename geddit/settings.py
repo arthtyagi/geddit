@@ -42,11 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'social_django',
-    'oauth2_provider',
     'ckeditor',
     'ckeditor_uploader'
-    
 ]
 
 
@@ -90,7 +89,7 @@ WSGI_APPLICATION = 'geddit.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'HOST': config('DB_HOST'),
         'PORT': ''
     }
@@ -98,9 +97,9 @@ DATABASES = {
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.github.GithubOAuth2',
-
     'django.contrib.auth.backends.ModelBackend',
 )
+
 SOCIAL_AUTH_GITHUB_KEY = 'aac25dbd1ef6c8f9f831'
 SOCIAL_AUTH_GITHUB_SECRET = '81116db2df291bfd9e8588cb580ce5d58b739718'
 
@@ -123,23 +122,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-OAUTH2_PROVIDER = {
-    # this is the list of available scopes
-    'SCOPES': {'read': 'Read scope', 'write': 'Write scope', 'groups': 'Access to your groups', 'todo': 'Access to your Todo'}
-}
-
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
+    'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAdminUser',
 
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-        'oauth2_provider.contrib.rest_framework.OAuth2Authentication',
-    ]
+    )
 }
 
 
@@ -176,10 +169,10 @@ LOGOUT_REDIRECT_URL = 'login'
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 CKEDITOR_CONFIGS = {
-'default': {
-    'toolbar': 'auto', #You can change this based on your requirements.
-    'width': 'auto',
-    'height':'auto'
+    'default': {
+        'toolbar': 'auto',  # You can change this based on your requirements.
+        'width': 'auto',
+        'height': 'auto'
 
-          },
-    }
+    },
+}

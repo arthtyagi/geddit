@@ -1,17 +1,21 @@
 from notes.models import Notes
 from notes.api.serializers import NotesSerializer
-from django.http import Http404
-from rest_framework import generics, permissions, serializers
-from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
+from rest_framework import generics
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+
 
 class NotesList(generics.ListCreateAPIView):
-
+	permission_classes = [IsAdminUser]
 	queryset = Notes.objects.all()
 	serializer_class = NotesSerializer
 
 
 class NotesDetail(generics.RetrieveUpdateDestroyAPIView):
-
+	permission_classes = [IsAdminUser]
 	queryset = Notes.objects.all()
 	serializer_class = NotesSerializer
 
