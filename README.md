@@ -45,6 +45,8 @@ There's no such thing as timeline for Geddit, it's a project that will have vari
 
 Well as of now, it has a fairly good responsive UI, notes, tasks, a search bar, Github Login, an upcoming forum, labels and images in notes. Increased the security of this repo by using decouple. More on the way since essentially all of these features are being ported over by me to [DomeCode](https://arthtyagi.me/domecode) except they'll be more polished and would hopefully make the end user spend more time on the application. ( Application since it'll be a PWA i.e. a Progressive Web Application as well ).
 
+July 5th Update : Ajaxified Like Buttons. In simple words, the pages don't have to reload to process the task of liking an object, in the case of Geddit, a note or a task.
+
 ### Fun shit :
 
  - [ ] Adding date picker
