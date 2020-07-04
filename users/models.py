@@ -16,16 +16,13 @@ class Profile(models.Model):
         img = Image.open(self.image.path)
 
         if img.height > 300 and img.width > 300:
-            output_size = (300, 300)
             img = img.resize((300, 300), Image.ANTIALIAS)
             img.save(self.image.path, quality=90)
 
         if img.height > 300 and img.width < 300:
-            output_size = (img.width, img.width)
             img = img.resize((img.width, img.width), Image.ANTIALIAS)
             img.save(self.image.path, quality=90)
 
         if img.height < 300 and img.width > 300:
-            output_size = (img.height, img.height)
             img = img.resize((img.height, img.height), Image.ANTIALIAS)
             img.save(self.image.path, quality=90)

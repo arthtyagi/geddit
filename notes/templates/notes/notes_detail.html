@@ -1,10 +1,12 @@
-{% extends "notes/base.html" %} {% block content %}
+{% extends "notes/base.html" %}
+{% block content %}
 <article class="media content-section">
   <img class="rounded-circle article-img" src="{{ object.user.profile.image.url }}" />
   <div class="media-body">
     <div class="article-metadata">
       <small class="text-muted">{{ object.created|date:"F d, Y" }}</small>
       <span class="badge badge-info">{{object.category}}</span>
+
       {% if object.user == user %}
       <div>
         <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'notes:update' object.id %}">Update</a>
@@ -13,6 +15,9 @@
       {% endif %}
     </div>
     <h2 class="article-title">{{ object.title }}</h2>
+    <button name="badge-info" <a data-href="{%url 'notes:likes-api-toggle' object.id%}" data-likes="{{object.likes.count}}"
+      href="{%url 'notes:likes-toggle' object.id%}" class="btn btn-info btn-sm">{{object.likes.count}} Likes
+    </a></button>
     {{object.content|safe}}
   </div>
 </article>

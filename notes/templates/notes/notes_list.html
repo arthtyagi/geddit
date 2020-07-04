@@ -30,6 +30,11 @@
         </div>
         <span class="badge badge-info">{{notes.category}}</span>
         <h2><a class="article-title" href="{% url 'notes:detail' notes.id %}">{{ notes.title }}</a></h2>
+        
+        <button name="badge-info" <a data-href="{%url 'notes:likes-api-toggle' notes.id%}" data-likes="{{notes.likes.count}}"
+      href="{%url 'notes:likes-toggle' notes.id%}" class="btn btn-info btn-sm">{{notes.likes.count}} Likes
+    </a></button>
+
         <p class="article-content">{{ notes.content|safe|truncatewords_html:30 }}</p>
     </div>
 </article>
