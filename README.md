@@ -1,9 +1,10 @@
+# Geddit 🦄
+
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/arthtyagi/geddit) 
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django?style=flat-square)
 [![Requirements Status](https://requires.io/github/arthtyagi/geddit/requirements.svg?branch=master)](https://requires.io/github/arthtyagi/geddit/requirements/?branch=master)
 ![GitHub top language](https://img.shields.io/github/languages/top/arthtyagi/geddit)
 ![GitHub Pipenv locked dependency version (branch)](https://img.shields.io/github/pipenv/locked/dependency-version/arthtyagi/geddit/django/master)
-
 ![PyPI - Implementation](https://img.shields.io/pypi/implementation/django?color=green)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/django)
 ![GitHub Pipenv locked Python version (branch)](https://img.shields.io/github/pipenv/locked/python-version/arthtyagi/geddit/master?color=black&style=flat-square)
@@ -11,7 +12,6 @@
 
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/arthtyagi/geddit/master?style=for-the-badge)
 
-# Geddit 🦄
 
 ![code (2)](https://user-images.githubusercontent.com/41021374/86322013-c1ee0680-bc57-11ea-8152-ca67856d9df4.png)
 
