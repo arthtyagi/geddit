@@ -9,8 +9,8 @@
         </form>
     </div>
 </div>
-<br>
 
+<small class="text-muted">Your query {{ query }} has returned {{ paginator.count }} result{{ paginator.count|pluralize }}.</small>
 <h1>Your Tasks</h1>
 <span class="badge badge-pill badge-dark">Hi {{user.first_name}}, you have a total of {%count_posts_of user%}
     task(s).</span>
