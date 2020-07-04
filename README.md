@@ -36,16 +36,17 @@ The modules are made using :
 - [X] Notes specific to individual users.
 - [X] Signin using Email. 
 - [X] To-do Lists specific to individual users.
+
 ### Projected Timeline:
 
 There's no such thing as timeline for Geddit, it's a project that will have various branches and will be a skeleton project to test new project. Albeit, a sandbox. So yeah, have at it! Fork this thing.
-
 
 ### What's new?
 
 Well as of now, it has a fairly good responsive UI, notes, tasks, a search bar, Github Login, an upcoming forum, labels and images in notes. Increased the security of this repo by using decouple. More on the way since essentially all of these features are being ported over by me to [DomeCode](https://arthtyagi.me/domecode) except they'll be more polished and would hopefully make the end user spend more time on the application. ( Application since it'll be a PWA i.e. a Progressive Web Application as well ).
 
 ### Fun shit :
+
  - [ ] Adding date picker
  - [ ] Redoing the UI in React.js
  - [ ] Public and Private Notes and Tasks.
@@ -59,4 +60,16 @@ Well as of now, it has a fairly good responsive UI, notes, tasks, a search bar, 
 ![image](https://cdn.discordapp.com/attachments/593123274465083393/727562377007988836/unknown.png)
 ![image](https://cdn.discordapp.com/attachments/593123274465083393/727562337946435715/unknown.png)
 
-Skeleton Project of DomeCode with similar components. Used for testing purposes.
+### How to get started with contributing to Geddit? 
+
+Feel free to pick up any of the issues, point out some if you find and make some enchancements.
+
+###  How to contribute? 
+
+This shouldn't be a legit question but I'm still gonna include a simple 3 step process for the noobs.
+
+- Fork this repo and then clone that fork on your local machine.
+- Open the project in Vim/Emacs ( or whichever editor you prefer ), start the virtual environment with `pipenv shell`.
+- I've also included the requirements.txt file just in case in case you wanna use `venv`. Either way, install the requirements and start coding!
+
+Contributions, stars and forks are appreciated! This project looks basic rn but is growing continously in a large codebase for an even better codebase of DomeCode ( a product I'm building ) of which this acts as testing project with hands-on experience. Code for one, make progress with two ideology! :P 
