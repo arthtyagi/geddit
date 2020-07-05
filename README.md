@@ -23,13 +23,13 @@ The modules are made using :
 - Django, 🐍
 - Bootstrap 🎃 and well, 
 - DHTML 👀
-- React.js soon! 🍻
+- React.js ⚛️ soon! 🍻
 
 ## Upcoming Modules :
 
-- Forums
-- Resumé
-- FAQ
+- Forums :page_with_curl:
+- Resumé 💼
+- FAQ 🙋
 
 ## TO-DO :
 
