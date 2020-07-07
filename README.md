@@ -35,6 +35,7 @@ The modules are made using :
 
 - [X] Notes specific to individual users.
 - [X] Signin using Email. 
+- [X] Signin using Github.
 - [X] To-do Lists specific to individual users.
 
 ### Projected Timeline:
