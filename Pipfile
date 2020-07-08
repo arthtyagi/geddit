@@ -22,8 +22,8 @@ django-oauth-toolkit = "*"
 pillow = "*"
 social-auth-app-django = "*"
 python-decouple = "*"
-django-ckeditor = "*"
 httpie = "*"
+django-ckeditor = "*"
 
 [requires]
 python_version = "3.8"
