@@ -153,17 +153,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'notes/static/')
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'notes:home'
+
+LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
