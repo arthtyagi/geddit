@@ -56,7 +56,21 @@ July 5th Update : Ajaxified Like Buttons. In simple words, the pages don't have 
  - [ ] Adding a How-To use this animator.
  - [X] Support Markdown
  - [X] Support Rich Text Editing
- 
+
+### Am I using AJAX?
+
+Yes, I'm using Ajax at certain places in the app. I feel that a technology shouldn't be used just because it's "cool" but only if it actually fulfills a purpose that wouldn't be achieved otherwise.
+
+I've used Ajax only where it makes a significant difference such as Like/Upvote Buttons and Incremental Search ( search as you type ). I've not used AJAX in my Todo either which seems radical but trust me, I've crafted the ToDo such that AJAX wouldn't have made a particularly huge difference.
+
+- Does this mean I won't be implementing AJAX anywhere? 
+
+No, not really. I'll be implementing AJAX only if it provides a performance increase to a substantial amount of traffic since then it'd really make sense but that's still in the future and also, implementing AJAX for performance improvements is still down on my list below better core functionality of the application so yeah, I'll eventually come to it. Or hopefully, someone else does and creates a pull request.
+
+The way the app works is such that the effect of AJAX on the application itself won't be much hence, I'm not in a hurry to implement that. Most of the app works on page refreshes since the cases where there is a POST request are generally scenarios where the user would spend quite a bit of time and a page refresh would make sense, it doesn't have much of an effect on UX. However, in conditions like that of an Upvote Button, an AJAX call makes way more sense since the user wants the result instantly and a page refresh for every such small task would be stupid.
+
+In a nutshell, use the tool when it has a valid use case. Throwing tools at a thing might work but it's just not good I suppose.
+
 ### What does that look like right now?
 
 ![image](https://cdn.discordapp.com/attachments/593123274465083393/727562175010570350/unknown.png)
