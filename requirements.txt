@@ -3,15 +3,19 @@ asgiref==3.2.10; python_version >= '3.5'
 certifi==2020.6.20
 cffi==1.14.0
 chardet==3.0.4
-coverage==5.1
+coverage==5.2
 cryptography==2.9.2; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'
+defusedxml==0.6.0; python_version >= '3.0'
 django-appconf==1.0.4
+django-ckeditor==5.9.0
 django-crispy-forms==1.9.1
 django-cryptography==1.0
 django-filter==2.3.0
+django-js-asset==1.2.2
 django-oauth-toolkit==1.3.2
-django==3.0.7
+django==3.0.8
 djangorestframework==3.11.0
+httpie==2.2.0
 idna==2.10; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'
 lazy-object-proxy==1.5.0
 markdown==3.2.2
@@ -20,8 +24,14 @@ oauthlib==3.1.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.
 pillow==7.2.0
 pycparser==2.20; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'
 pygments==2.6.1
+pyjwt==1.7.1
+python-decouple==3.3
+python3-openid==3.2.0; python_version >= '3.0'
 pytz==2020.1
+requests-oauthlib==1.3.0
 requests==2.24.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'
 six==1.15.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'
+social-auth-app-django==4.0.0
+social-auth-core==3.3.3
 sqlparse==0.3.1; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'
 urllib3==1.25.9; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4'
