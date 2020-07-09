@@ -7,12 +7,13 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.views.generic.edit import CreateView
 
-
-class SignUpView(CreateView, SuccessMessageMixin):
+class SignUpView( SuccessMessageMixin,CreateView):
 	template_name = 'users/register.html'
 	success_url = reverse_lazy('login')
 	form_class = UserRegisterForm
 	success_message = "Your profile was created successfully"
+#popeye123456
+
 
 @login_required
 def profile(request):

@@ -10,7 +10,8 @@
     </div>
 </div>
 
-<small class="text-muted">Your query {{ query }} has returned {{ paginator.count }} result{{ paginator.count|pluralize }}.</small>
+<small class="text-muted">Your query {{ query }} has returned {{ paginator.count }}
+    result{{ paginator.count|pluralize }}.</small>
 <h1>Your Tasks</h1>
 <span class="badge badge-pill badge-dark">Hi {{user.first_name}}, you have a total of {%count_posts_of user%}
     task(s).</span>
@@ -22,8 +23,9 @@
         <div class="article-metadata">
             <small class="text-muted">{{ todo.created|date:"F d, Y" }}</small>
         </div>
-        <h2><a class="article-title" href="{% url 'todo:detail' todo.id %}">{{ todo.title }}</a></h2>
-        <p class="article-content">{{ todo.content| truncatewords_html:30 }}</p>
+        <h2><a class="article-title" href="{% url 'todo:update' todo.id %}">{{ todo.title }}</a></h2>
+        <p class="article-content">{{ todo.content }}</p>
+        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'todo:delete' todo.id %}">Mark as Done</a>
     </div>
 </article>
 {% endfor %}

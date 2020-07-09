@@ -33,12 +33,13 @@ $(document).ready(function () {
     })
 })
 
-$(window).scroll(function() {
-    if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+$(window).scroll(function () {
+    if ($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
         $('.page-item').addClass('fixed_button');
-    }else{
+    } else {
         $('.page-item').removeClass('fixed_button');
     }
- });
+});
 
-    var CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';
+var CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';
+
