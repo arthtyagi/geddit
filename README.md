@@ -71,6 +71,16 @@ The way the app works is such that the effect of AJAX on the application itself 
 
 In a nutshell, use the tool when it has a valid use case. Throwing tools at a thing might work but it's just not good I suppose.
 
+### What kind of search engine am I using?
+
+I'm using a primitive search engine that's made through simple logic. It powers Notes, Tasks and Forums since these are the only features requiring a search bar in all honesty. Especially the forums. The search engine works effectively for finding exact content/keyword in your notes and tasks. However, for forum it's useful to look for the particular topic instead of typing multiple keywords since the caveat of this search engine is the inability to handle multiple keywords unless they are discovered in succession in the content. To improve upon this, I could be using enterprise solutions but since that's just an overhead expense until I see decent user base growth on the platform, DomeCode, I'll stick to using this. Although, given that forums would need better search ability, I'll add sorting options along with the pre existing keyword search engine to make it viable in the domain of a standard forum. 
+
+### A new feature that could be really sick!
+
+Private messaging would be great I suppose to contact people you meet on the forums along with a secret feature I'm planning to work on, it will set the whole vibe for the DomeCode application.
+
+Private messaging because mind you, this is not a standard forum application or a to-do application, these all are just submodules of a bigger application that revolves around providing resources for code from all over the internet and also allows users to practice within the app. Hence, private messaging as an addition to all the features DomeCode will have soon would prove to be really sick. The whole idea is to create a small ecosystem within the application and make it possible for the user to get things done with way more ease than other similar platforms because of the simple yet intuitive and extensive features DomeCode would hold.
+
 ### What does that look like right now?
 
 ![image](https://cdn.discordapp.com/attachments/593123274465083393/727562175010570350/unknown.png)

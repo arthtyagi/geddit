@@ -10,8 +10,9 @@ urlpatterns = [
     path('notes/<int:pk>/', NotesDetailView.as_view(), name='detail'),
     path('notes/new/', NotesCreateView.as_view(), name='create'),
     path('notes/<int:pk>/update/', NotesUpdateView.as_view(), name='update'),
-    path('notes/<int:pk>/like/', NotesLikeToggle.as_view(), name = 'likes-toggle'),
-    path('api/notes/<int:pk>/like/', NotesLikeAPIToggle.as_view(), name='likes-api-toggle'),
+    path('notes/<int:pk>/like/', NotesLikeToggle.as_view(), name='likes-toggle'),
+    path('api/notes/<int:pk>/like/',
+         NotesLikeAPIToggle.as_view(), name='likes-api-toggle'),
     path('notes/<int:pk>/delete/', NotesDeleteView.as_view(), name='delete'),
     path('about/', views.about, name='about')
 ]
