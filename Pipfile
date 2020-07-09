@@ -24,6 +24,7 @@ social-auth-app-django = "*"
 python-decouple = "*"
 httpie = "*"
 django-ckeditor = "*"
+isort = "*"
 
 [requires]
 python_version = "3.8"
