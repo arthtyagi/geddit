@@ -18,6 +18,9 @@
 Geddit is an open-source web app that is essentially a skeleton project of DomeCode with similar components. It is being used for testing purposes.
 The project has two modules, the Notes app and the To-Do app and other upcoming modules.
 
+NOTE : The Forum, Notes and Tasks in the basic usable form is all there will be to Geddit since I don't intend to make DomeCode free initially. I'll consider open-sourcing DomeCode in the future. 
+
+- 10th July 2020 - Once I'm done in adding a decent yet purely basic forum to Geddit, I'll halt the contributions to Geddit and shift my workflow to DomeCode that will have more features with a better UI and more AND might also be open-sourced in the future. As for Geddit, I'll make it's apps re-usable and continue to accept PRs if there are any. If you're interested in working on [DomeCode](https://arthtyagi.me/domecode), feel free to contact me. The link I've added for DomeCode gives a quick and rough overview of what it'll be, however it is to be noted that it is not a complete representation of the features being built for DomeCode by any measure. 
 
 The modules are made using :
 - Django, 🐍
