@@ -47,6 +47,9 @@ class TodoDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	model = Todo
 	success_url = reverse_lazy('todo:list')
 
+	def get(self, request, *args, **kwargs):
+		return self.post(request, *args, **kwargs)
+
 	def test_func(self):
 		Todo = self.get_object()
 		if self.request.user == Todo.user:

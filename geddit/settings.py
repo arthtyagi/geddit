@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from decouple import config, Csv
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,21 +32,31 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Application definition
 
 INSTALLED_APPS = [
+    # myapps
     'users.apps.UsersConfig',
     'notes.apps.NotesConfig',
     'todo.apps.TodoConfig',
+    # crispy
     'crispy_forms',
+    # default
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # haystack
+    'six',
+
+    # rest
     'rest_framework',
     'rest_framework.authtoken',
+    # oauth
     'social_django',
+    # ckeditor
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+
 ]
 
 
@@ -57,7 +68,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # OAUTH
     'social_django.middleware.SocialAuthExceptionMiddleware',
+
 ]
 
 ROOT_URLCONF = 'geddit.urls'
@@ -73,12 +86,16 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social_django.context_processors.backends',  # <--
-                'social_django.context_processors.login_redirect',  # <--
+
+                'social_django.context_processors.backends',  # OAUTH
+                'social_django.context_processors.login_redirect',  # OAUTH
+
             ],
+
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'geddit.wsgi.application'
 
@@ -174,7 +191,7 @@ CKEDITOR_CONFIGS = {
         'width': 'auto',
         'height': 'auto',
         'uiColor': 'moona-lisa'
-       
+
 
     },
 }

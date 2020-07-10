@@ -25,6 +25,10 @@ python-decouple = "*"
 httpie = "*"
 django-ckeditor = "*"
 isort = "*"
+six = "*"
+markdown2 = "*"
+django-widget-tweaks = "*"
+django-mptt = "*"
 
 [requires]
 python_version = "3.8"
