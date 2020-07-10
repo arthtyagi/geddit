@@ -29,6 +29,7 @@ six = "*"
 markdown2 = "*"
 django-widget-tweaks = "*"
 django-mptt = "*"
+django-awesome-avatar = "*"
 
 [requires]
 python_version = "3.8"
