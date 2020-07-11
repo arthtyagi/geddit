@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'notes.apps.NotesConfig',
     'todo.apps.TodoConfig',
+    'forum.apps.ForumConfig',
     # crispy
     'crispy_forms',
     # default

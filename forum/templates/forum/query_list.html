@@ -1,0 +1,79 @@
+{% extends "notes/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="col-sm-5">
+    <div class="card-deck">
+        <form class="form-inline" method="GET" autocomplete="off" action="/forum/query/">
+            <input class="form-control mr-sm-2" type="search" name="q" placeholder="content/keyword"
+                aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> 🔍</button>
+        </form>
+    </div>
+</div>
+
+
+<!--Improve Search with Incremental Search (AJAX and JQuery)-->
+
+<small class="text-muted">Your query {{ query }} has returned {{ paginator.count }}
+    result{{ paginator.count|pluralize }}.</small>
+
+
+<h1>Geddit's Forum </h1>
+<span class="badge badge-dark badge-pill"> <a class="nav-item nav-link" href="{%url 'forum:query-create'%}">New
+        Query</a>
+</span>
+<br><br>
+
+{% for query in query %}
+<article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ query.user.profile.image.url }}">
+    <div class="media-body">
+        <div class="article-metadata">
+            <small class="text-muted">Last modified on {{ query.last_modified|date:"F d, Y" }}</small>
+            <small class="text-muted">and created on {{ query.created|date:"F d, Y" }}</small>
+        </div>
+        <span class="badge badge-info">{{query.category}}</span>
+        <h2><a class="article-title" href="{% url 'forum:detail' query.id %}">{{ query.title }}</a></h2>
+
+        <button name="badge-info" <a data-href="{%url 'forum:query-likes-api-toggle' query.id%}"
+            data-likes="{{query.likes.count}}" href="{%url 'forum:query-likes-toggle' query.id%}"
+            class="btn btn-info btn-sm">{{query.likes.count}} Likes
+            </a></button>
+
+        <p class="article-content">{{ query.content|safe|truncatewords_html:30 }}</p>
+    </div>
+</article>
+{% endfor %}
+{% if page_obj.has_previous %}
+
+<a class="page-link badge badge-dark badge-pill"
+    href="?{% if query %}q={{query}}&{% endif %}page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
+
+{% endif %}
+
+{% for i in page_obj.paginator.page_range %}
+{% if page_obj.number == i %}
+<a class="page-link badge badge-dark badge-pill">Page {{ i }}</a>
+{% else %}
+<a class="page-link badge badge-dark badge-pill" href="?{% if query %}q={{query}}&{% endif %}page={{ i }}">
+    {{ i }}</a>
+
+{% endif %}
+{% endfor %}
+
+{% if page_obj.has_next %}
+
+<a class="page-link badge badge-dark badge-pill"
+    href="?{% if query %}q={{query}}&{% endif %}page={{ page_obj.next_page_number }}">Next</a>
+
+
+<a class="page-link badge badge-dark badge-pill"
+    href="?{% if query %}q={{query}}&{% endif %}page={{ page_obj.paginator.num_pages }}">Last
+    &raquo;</a>
+
+{% endif %}
+
+<br>
+
+
+{% endblock content %}

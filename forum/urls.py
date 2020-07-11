@@ -1,16 +1,31 @@
-# todo - update the urls.py with private and public mode urls
 from django.urls import path
 from .import views
-from .views import queryCreateView, queryListView, queryUpdateView, queryDeleteView, queryDetailView, queryLikeAPIToggle, queryLikeToggle
-app_name = 'query'
+from .views import QueryCreateView, QueryListView, QueryUpdateView, QueryDeleteView, QueryDetailView, QueryLikeAPIToggle, QueryLikeToggle,AnswerLikeAPIToggle, AnswerLikeToggle, AnswerCreateView, AnswerDeleteView, AnswerUpdateView
+
+app_name = 'forum'
 
 urlpatterns = [
-    path('query/', queryListView.as_view(), name='list'),
-    path('query/<int:pk>/', queryDetailView.as_view(), name='detail'),
-    path('query/new/', queryCreateView.as_view(), name='create'),
-    path('query/<int:pk>/update/', queryUpdateView.as_view(), name='update'),
-    path('query/<int:pk>/like/', queryLikeToggle.as_view(), name='likes-toggle'),
-    path('api/query/<int:pk>/like/',
-         queryLikeAPIToggle.as_view(), name='likes-api-toggle'),
-    path('query/<int:pk>/delete/', queryDeleteView.as_view(), name='delete'),
+    # forum url
+    path('forum/', QueryListView.as_view(), name='list'),
+    # query urls
+    path('forum/query/<int:pk>/', QueryDetailView.as_view(), name='detail'),
+    path('forum/query/new/', QueryCreateView.as_view(), name='query-create'),
+    path('forum/query/<int:pk>/update/',
+         QueryUpdateView.as_view(), name='query-update'),
+    path('forum/query/<int:pk>/delete/',
+         QueryDeleteView.as_view(), name='query-delete'),
+    path('forum/query/<int:pk>/like/',
+         QueryLikeToggle.as_view(), name='query-likes-toggle'),
+    path('api/forum/query/<int:pk>/like/',
+         QueryLikeAPIToggle.as_view(), name='query-likes-api-toggle'),
+    # answer urls
+    path('forum/answer/new/', AnswerCreateView.as_view(), name='answer-create'),
+    path('forum/answer/<int:pk>/update/',
+         AnswerUpdateView.as_view(), name='answer-update'),
+    path('forum/answer/<int:pk>/delete/',
+         AnswerDeleteView.as_view(), name='answer-delete'),
+    path('forum/answer/<int:pk>/like/',
+         AnswerLikeToggle.as_view(), name='answer-likes-toggle'),
+    path('api/forum/answer/<int:pk>/like/',
+         AnswerLikeAPIToggle.as_view(), name='answer-likes-api-toggle'),
 ]
