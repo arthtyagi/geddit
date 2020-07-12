@@ -15,7 +15,7 @@
 
 <!--Improve Search with Incremental Search (AJAX and JQuery)-->
 
-<small class="text-muted">Your query {{ query }} has returned {{ paginator.count }}
+<small class="text-muted">Your query has returned {{ paginator.count }}
     result{{ paginator.count|pluralize }}.</small>
 
 
@@ -30,17 +30,17 @@
 {% for notes in notes %}
 <article class="media content-section">
     <img class="rounded-circle article-img" src="{{ notes.user.profile.image.url }}">
-    <div class="media-body">
+    <div class="media-body container-fluid">
         <div class="article-metadata">
             <small class="text-muted">Last modified on {{ notes.last_modified|date:"F d, Y" }}</small>
             <small class="text-muted">and created on {{ notes.created|date:"F d, Y" }}</small>
         </div>
-        <span class="badge badge-info">{{notes.category}}</span>
-        <h2><a class="article-title" href="{% url 'notes:detail' notes.id %}">{{ notes.title }}</a></h2>
+        <span class="badge badge-info badge-pill">{{notes.category}}</span>
+        <h3><a class="article-title" href="{% url 'notes:detail' notes.slug %}">{{ notes.title }}</a></h3>
 
-        <button name="badge-info" <a data-href="{%url 'notes:likes-api-toggle' notes.id%}"
-            data-likes="{{notes.likes.count}}" href="{%url 'notes:likes-toggle' notes.id%}"
-            class="btn btn-info btn-sm">{{notes.likes.count}} Likes
+        <button name="badge-info" id="like"<a data-href="{%url 'notes:likes-api-toggle' notes.slug%}"
+            data-likes="{{notes.likes.count}}" href="{%url 'notes:likes-toggle' notes.slug%}"
+            class="badge badge-danger badge-pill">{{notes.likes.count}} Likes
             </a></button>
 
         <p class="article-content">{{ notes.content|safe|truncatewords_html:30 }}</p>

@@ -1,0 +1,32 @@
+{% extends "notes/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+  <div class="media">
+    <img class="rounded-circle account-img" src="{{profile.image.url }}">
+    <div class="media-body">
+      <h5><a class="badge badge-light badge-pill"
+          href="{%url 'users:profilepage' user.profile.slug%}">{{profile.user.username}}</a></h5>
+      {%if request.user.username == profile.user.username%}
+      <a class="btn badge btn-sm badge-pill badge-dark " href="{% url 'users:profile' %}">Edit ✏️️</a>
+      {%endif%}
+      <h3 class="account-heading">{{ profile.user.first_name }}</h3>
+      <p class="text-secondary">{{ profile.user.email }}</p>
+
+      {%if request.user.username == profile.user.username%}
+      <div class=" card-deck">
+        <div class="row">
+          <div class="col-sm">
+            <a href="{%url 'notes:list'%}" class="btn btn-primary">Notes</a>
+          </div>
+          <div class="col-sm">
+            <a href="{%url 'todo:list'%}" class="btn btn-primary">Tasks</a>
+          </div>
+          <div class="col-sm">
+            <a href="{%url 'forum:list'%}" class="btn btn-primary">Forum</a>
+          </div>
+        </div>
+        {%endif%}
+
+      </div>
+      {% endblock content %}

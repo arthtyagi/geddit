@@ -1,46 +1,56 @@
 {% extends "notes/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="col-sm-5">
-    <div class="card-deck">
-        <form class="form-inline" method="GET" autocomplete="off" action="/forum/query/">
+
+
+
+<div class=" card-deck">
+    <div class="row">
+        <div class="col-sm" style="padding-left:40px ;">
+            <h2>Geddit's Forum </h2>
+        
+            <small class="text-muted">Your query has returned {{ paginator.count }}
+                result{{ paginator.count|pluralize }}.</small><br><br>
+
+           <button class="badge badge-dark badge-pill"> <a class="btn btn-dark"
+                    href="{%url 'forum:query-create'%}">New Query</a>
+            </button>
+        </div>
+    </div>
+ <br>
+    <div class="col-sm">
+
+        <form class="form-inline md-form mr-auto mb-4" style="margin-top: -8px;" method="GET" autocomplete="off" action="/forum/">
             <input class="form-control mr-sm-2" type="search" name="q" placeholder="content/keyword"
-                aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> 🔍</button>
-        </form>
+            aria-label="Search">
+            <br><br>
+            <button class="btn btn-dark btn-rounded btn-md my-0" type="submit">Search</button>
+
+          </form>
+ 
     </div>
 </div>
 
 
+<br>
 <!--Improve Search with Incremental Search (AJAX and JQuery)-->
-
-<small class="text-muted">Your query {{ query }} has returned {{ paginator.count }}
-    result{{ paginator.count|pluralize }}.</small>
-
-
-<h1>Geddit's Forum </h1>
-<span class="badge badge-dark badge-pill"> <a class="nav-item nav-link" href="{%url 'forum:query-create'%}">New
-        Query</a>
-</span>
-<br><br>
-
-{% for query in query %}
-<article class="media content-section">
-    <img class="rounded-circle article-img" src="{{ query.user.profile.image.url }}">
-    <div class="media-body">
+{% for queries in query %}
+<article class="media content-section" style="padding-bottom:15px ; padding-top: 15px;">
+    <img class="rounded-circle article-img" src="{{ queries.user.profile.image.url }}">
+    <div class="media-body container-fluid">
         <div class="article-metadata">
-            <small class="text-muted">Last modified on {{ query.last_modified|date:"F d, Y" }}</small>
-            <small class="text-muted">and created on {{ query.created|date:"F d, Y" }}</small>
+            <small class="text-muted">Last modified on {{ queries.last_modified|date:"F d, Y" }}</small>
+            <small class="text-muted">and created on {{ queries.created|date:"F d, Y" }}</small>
         </div>
-        <span class="badge badge-info">{{query.category}}</span>
-        <h2><a class="article-title" href="{% url 'forum:detail' query.id %}">{{ query.title }}</a></h2>
+        <span class="badge badge-light badge-pill">{{queries.category}}</span>
+        <h2><a class="article-title" href="{% url 'forum:detail' queries.id %}">{{ queries.title }}</a></h2>
 
-        <button name="badge-info" <a data-href="{%url 'forum:query-likes-api-toggle' query.id%}"
-            data-likes="{{query.likes.count}}" href="{%url 'forum:query-likes-toggle' query.id%}"
-            class="btn btn-info btn-sm">{{query.likes.count}} Likes
+        <button name="badge-info" id="like" class="badge badge-danger badge-pill" <a
+            data-href="{%url 'forum:query-likes-api-toggle' queries.id%}" data-likes="{{queries.likes.count}}"
+            href="{%url 'forum:query-likes-toggle' queries.id%}" class="btn btn-info btn-sm">{{queries.likes.count}}
+            Likes
             </a></button>
-
-        <p class="article-content">{{ query.content|safe|truncatewords_html:30 }}</p>
+  
     </div>
 </article>
 {% endfor %}

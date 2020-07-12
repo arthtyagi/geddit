@@ -13,9 +13,23 @@ from rest_framework.views import APIView
 class QueryListView(ListView):
     model = Query
     template_name = "forum/query_list.html"
-    paginate_by = 10
+    paginate_by = 15
     context_object_name = 'query'
     ordering = ['-last_modified']
+
+
+    def get_queryset(self, *args, **kwargs):
+        object_list = super(QueryListView, self).get_queryset(*args, **kwargs)
+        search = self.request.GET.get('q', None)
+        if search:
+            object_list = object_list.filter(
+                Q(title__contains=search) |
+                Q(content__contains=search) |
+                Q(category__contains=search)
+            ).order_by('-last_modified')
+            return object_list
+        else:
+            return object_list
 
 
 class QueryDetailView(DetailView):

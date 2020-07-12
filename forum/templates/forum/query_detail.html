@@ -5,7 +5,7 @@
   <div class="media-body">
     <div class="article-metadata">
       <small class="text-muted">{{ query.created|date:"F d, Y" }}</small>
-      <span class="badge badge-info">{{query.category}}</span>
+      <span class="badge badge-light badge-pill">{{query.category}}</span>
 
       {% if query.user == user %}
       <div>
@@ -15,10 +15,11 @@
       {% endif %}
     </div>
     <h2 class="article-title">{{ query.title }}</h2>
-    <button name="badge-info" <a data-href="{%url 'forum:query-likes-api-toggle' query.id%}" data-likes="{{query.likes.count}}"
+    <button name="badge-info" id="like" class="badge badge-danger badge-pill"<a data-href="{%url 'forum:query-likes-api-toggle' query.id%}" data-likes="{{query.likes.count}}"
       href="{%url 'forum:query-likes-toggle' query.id%}" class="btn btn-info btn-sm">{{query.likes.count}} Likes
     </a></button>
     {{query.content|safe}}
   </div>
+  <p><a href="{%url 'forum:list'%}">Go Back</a></p>
 </article>
 {% endblock content %}

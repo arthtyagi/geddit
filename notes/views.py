@@ -21,7 +21,7 @@ def about(request):
 class NotesListView(LoginRequiredMixin, ListView):
     model = Notes
     context_object_name = 'notes'
-    paginate_by = 10
+    paginate_by = 15
 
     def get_queryset(self, *args, **kwargs):
         object_list = super(NotesListView, self).get_queryset(*args, **kwargs)
@@ -86,9 +86,9 @@ class NotesCreateView(LoginRequiredMixin, CreateView):
 
 class NotesLikeToggle(RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        pk = self.kwargs.get('pk')
-        print(pk)
-        obj = get_object_or_404(Notes, pk=pk)
+        slug = self.kwargs.get('slug')
+        print(slug)
+        obj = get_object_or_404(Notes, slug=slug)
         url_ = obj.get_absolute_url()
         user = self.request.user
         if user.is_authenticated:
@@ -103,8 +103,8 @@ class NotesLikeAPIToggle(APIView):
     authentication_classes = [SessionAuthentication, ]
     permission_clases = [IsAuthenticated, ]
 
-    def get(self, request, pk=None, format=None):
-        obj = get_object_or_404(Notes, pk=pk)
+    def get(self, request, slug=None, format=None):
+        obj = get_object_or_404(Notes, slug=slug)
         updated = False
         liked = False
         user = self.request.user

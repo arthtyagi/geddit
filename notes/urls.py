@@ -7,12 +7,12 @@ app_name = 'notes'
 urlpatterns = [
     path('', views.home, name='home'),
     path('notes/', NotesListView.as_view(), name='list'),
-    path('notes/<int:pk>/', NotesDetailView.as_view(), name='detail'),
     path('notes/new/', NotesCreateView.as_view(), name='create'),
-    path('notes/<int:pk>/update/', NotesUpdateView.as_view(), name='update'),
-    path('notes/<int:pk>/like/', NotesLikeToggle.as_view(), name='likes-toggle'),
-    path('api/notes/<int:pk>/like/',
+    path('notes/<slug:slug>/delete/', NotesDeleteView.as_view(), name='delete'),
+    path('notes/<slug:slug>/', NotesDetailView.as_view(), name='detail'),
+    path('notes/<slug:slug>/update/', NotesUpdateView.as_view(), name='update'),
+    path('notes/<slug:slug>/like/', NotesLikeToggle.as_view(), name='likes-toggle'),
+    path('api/notes/<slug:slug>/like/',
          NotesLikeAPIToggle.as_view(), name='likes-api-toggle'),
-    path('notes/<int:pk>/delete/', NotesDeleteView.as_view(), name='delete'),
     path('about/', views.about, name='about')
 ]

@@ -3,7 +3,7 @@ $(document).ready(function () {
         btn.text(newCount + " " + verb)
         btn.attr("data-likes", newCount)
     }
-    $("button[name='badge-info']").click(function (e) {
+    $("#like").click(function (e) {
         e.preventDefault()
         var this_ = $(this)
         var likeUrl = this_.attr("data-href")
