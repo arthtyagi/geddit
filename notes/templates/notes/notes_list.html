@@ -38,15 +38,12 @@
         <span class="badge badge-info badge-pill">{{notes.category}}</span>
         <h3><a class="article-title" href="{% url 'notes:detail' notes.slug %}">{{ notes.title }}</a></h3>
 
-        <button name="badge-info" id="like"<a data-href="{%url 'notes:likes-api-toggle' notes.slug%}"
-            data-likes="{{notes.likes.count}}" href="{%url 'notes:likes-toggle' notes.slug%}"
-            class="badge badge-danger badge-pill">{{notes.likes.count}} Likes
-            </a></button>
 
         <p class="article-content">{{ notes.content|safe|truncatewords_html:30 }}</p>
     </div>
 </article>
 {% endfor %}
+
 {% if page_obj.has_previous %}
 
 <a class="page-link badge badge-dark badge-pill"

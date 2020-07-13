@@ -44,13 +44,11 @@
         </div>
         <span class="badge badge-light badge-pill">{{queries.category}}</span>
         <h2><a class="article-title" href="{% url 'forum:detail' queries.id %}">{{ queries.title }}</a></h2>
-
-        <button name="badge-info" id="like" class="badge badge-danger badge-pill" <a
-            data-href="{%url 'forum:query-likes-api-toggle' queries.id%}" data-likes="{{queries.likes.count}}"
-            href="{%url 'forum:query-likes-toggle' queries.id%}" class="btn btn-info btn-sm">{{queries.likes.count}}
-            Likes
-            </a></button>
   
+            <button 
+            class="badge badge-info badge-pill">This query has {{queries.likes.count}} likes.
+        </button>
+
     </div>
 </article>
 {% endfor %}

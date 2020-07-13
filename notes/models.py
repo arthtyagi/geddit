@@ -11,8 +11,6 @@ class Notes(models.Model):
     title = models.CharField(max_length=40)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content = RichTextField(blank=True, null=True)
-    likes = models.ManyToManyField(
-        User, default=None, blank=True, related_name="notes_likes")
     created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     category = models.CharField(max_length=25, default="CS") 

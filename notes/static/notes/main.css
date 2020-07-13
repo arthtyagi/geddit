@@ -1,18 +1,17 @@
 body {
-  background: #232526;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #414345, #232526);
-  background: linear-gradient(to right, #414345, #232526);
-  font-family: "Poppins";
+  background: rgb(105,105,105);
+  background: linear-gradient(90deg, rgba(105,105,105,1) 0%, rgba(23,21,21,1) 0%, rgba(16,3,37,1) 100%);
  font-weight: 400  ;
   font-size: 18px;
   color: aliceblue;
   margin-top: 5rem;
   overflow-y: scroll;
+  font-family: "Roboto Mono";
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: rgb(250, 229, 200);
+  font-family: "Poppins";
 }
 
 ul {
