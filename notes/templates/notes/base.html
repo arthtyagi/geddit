@@ -5,6 +5,10 @@
 
 <head>
 
+	<!-- IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
 		integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
 		crossorigin="anonymous"></script>
@@ -30,35 +34,72 @@
 
 	<header class="site-header">
 		<nav class="navbar navbar-expand-sm py-1 navbar-dark bg-steel fixed-top">
-			<div class="container">
-				<a class="navbar-brand mr-6" style="font-family: monospace; font-weight: bolder; font-size:xx-large ;"
-					href="{%url 'notes:home'%}">Geddit</a>
+			<div class="container-fluid">
+				<a class="navbar-brand mr-6" style="font-family:'Raleway' ;font-weight: bolder;  font-size:36px ;  background: linear-gradient(to right, #f12711, #f5af19); 
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;" href="{%url 'notes:home'%}">Geddit</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
 					aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+
+
 				<div class="collapse navbar-collapse" id="navbarToggle">
 					<div class="navbar-nav mr-auto">
-						<a class="nav-item nav-link" href="{%url 'notes:about'%}">About</a>
-						<a class="nav-item nav-link" href="{%url 'notes:list'%}">Notes</a>
-						<a class="nav-item nav-link" href="{%url 'todo:list'%}">Tasks</a>
-						<a class="nav-item nav-link" href="{%url 'forum:list'%}">Forum</a>
+						<li><a class="nav-item nav-link" href="#">FAQ</a></li>
+						<li><a class="nav-item nav-link" href="{%url 'notes:about'%}">About</a></li>
+					<li class="nav-item">
+					  <a class="nav-item nav-link" href="#">Blog</a>
+					</li>
+						
 					</div>
 					<!-- Navbar Right Side -->
-					<div class="navbar-nav">
-						{%if user.is_authenticated%}
-						<a class="nav-item nav-link" href="{%url 'users:profilepage' user.profile.slug%}">Profile</a>
-						<a class="nav-item nav-link" href="{%url 'logout'%}">Logout</a>
-						{%else%}
-						<a class="nav-item nav-link" href="{%url 'login'%}">Login</a>
-						<a class="nav-item nav-link" href="{%url 'users:register'%}">Register</a>
-						{%endif%}
-					</div>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto">
+						 
+							<li class="nav-item">
+								<a class="nav-item nav-link" href="#">Practice</a>
+							  </li> 
+						  <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+							Tracks
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							  <a class="dropdown-item" href="#">Explore Python</a>
+							  <a class="dropdown-item" href="#">Explore Java</a>
+							  <a class="dropdown-item" href="#">Explore Web-Dev</a>
+							  <a class="dropdown-item" href="#">Explore CTFs</a>
+							  <div class="dropdown-divider"></div>
+							</div>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="{%url 'forum:list'%}">Forum</a>
+						  </li>
+						 
+						  <li class="nav-item dropdown">
+							{%if user.is_authenticated%}
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+							 Profile</a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+								
+								<a class="dropdown-item" href="{%url 'users:profilepage' user.profile.slug%}">Profile</a>
+								<a class="dropdown-item" href="{%url 'notes:list'%}">Your Notes</a>
+							  <a class="dropdown-item" href="{%url 'todo:list'%}">Your To-Do(s)</a>
+							  <a class="dropdown-item" href="{%url 'users:profile'%}">Settings</a>
+							  <div class="dropdown-divider"></div>
+							  <a class="dropdown-item" href="{%url 'logout'%}">Logout</a>
+							  {%else%}
+							  <a class="dropdown-item" href="{%url 'users:register'%}">Register</a>
+							  {%endif%}
+							</div>
+						</ul>
+					  </div>
 				</div>
 			</div>
 		</nav>
 	</header>
-	<div role="main" class="container">
+
+	<div role="main" class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
 				{%if messages%}{%for message in messages%}

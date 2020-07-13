@@ -15,9 +15,6 @@
       {% endif %}
     </div>
     <h2 class="article-title">{{ object.title }}</h2>
-    <button name="badge-info" id= "like" class="badge badge-danger badge-pill"<a data-href="{%url 'notes:likes-api-toggle' object.slug%}" data-likes="{{object.likes.count}}"
-      href="{%url 'notes:likes-toggle' object.slug%}" class="btn btn-info btn-sm">{{object.likes.count}} Likes
-    </a></button>
     {{object.content|safe}}
   </div>
 </article>

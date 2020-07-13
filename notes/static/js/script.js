@@ -34,6 +34,5 @@ $(document).ready(function () {
 })
 
 
-
 var CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';
 
