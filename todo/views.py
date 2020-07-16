@@ -26,7 +26,6 @@ class TodoListView(LoginRequiredMixin, ListView):
 
 class TodoUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Todo
-    template_name = 'todo/todo_update_form.html'
     success_url = reverse_lazy('todo:list')
 
     fields = ['title', 'content']

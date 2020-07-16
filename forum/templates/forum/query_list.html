@@ -2,32 +2,30 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-
-
 <div class=" card-deck">
     <div class="row">
         <div class="col-sm" style="padding-left:40px ;">
             <h2>Geddit's Forum </h2>
-        
+
             <small class="text-muted">Your query has returned {{ paginator.count }}
                 result{{ paginator.count|pluralize }}.</small><br><br>
 
-           <button class="badge badge-dark badge-pill"> <a class="btn btn-dark"
-                    href="{%url 'forum:query-create'%}">New Query</a>
+            <button class="badge badge-dark badge-pill"> <a class="btn btn-dark" href="{%url 'forum:query-create'%}">New
+                    Query</a>
             </button>
         </div>
     </div>
- <br>
+    <br>
     <div class="col-sm">
 
-        <form class="form-inline md-form mr-auto mb-4" style="margin-top: -8px;" method="GET" autocomplete="off" action="/forum/">
+        <form class="form-inline md-form mr-auto mb-4" style="margin-top: -8px;" method="GET" autocomplete="off"
+            action="/forum/">
             <input class="form-control mr-sm-2" type="search" name="q" placeholder="content/keyword"
-            aria-label="Search">
+                aria-label="Search">
             <br><br>
             <button class="btn btn-dark btn-rounded btn-md my-0" type="submit">Search</button>
 
-          </form>
- 
+        </form>
     </div>
 </div>
 
@@ -35,7 +33,7 @@
 <br>
 <!--Improve Search with Incremental Search (AJAX and JQuery)-->
 {% for queries in query %}
-<article class="media content-section" style="padding-bottom:15px ; padding-top: 15px;">
+<article class="media content-section shadow" style="padding-bottom:15px ; padding-top: 15px;">
     <img class="rounded-circle article-img" src="{{ queries.user.profile.image.url }}">
     <div class="media-body container-fluid">
         <div class="article-metadata">
@@ -44,9 +42,8 @@
         </div>
         <span class="badge badge-light badge-pill">{{queries.category}}</span>
         <h2><a class="article-title" href="{% url 'forum:detail' queries.id %}">{{ queries.title }}</a></h2>
-  
-            <button 
-            class="badge badge-info badge-pill">This query has {{queries.likes.count}} likes.
+
+        <button class="badge badge-info badge-pill">This query has {{queries.likes.count}} likes.
         </button>
 
     </div>
