@@ -6,17 +6,17 @@ body {
   margin-top: 5rem;
   overflow-y: scroll;
   font-family: "Roboto Mono";
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: rgb(255, 228, 194);
   font-family: "Poppins";
 }
+
 .light-mode {
-  background-color:aliceblue;
+  background-color: aliceblue;
   color: #1f1f1f;
-  
 }
 
 ul {
@@ -24,23 +24,23 @@ ul {
 }
 
 .bg-steel {
-  background:#0f0f10;
+  background: #0f0f10;
 }
 
-.navbar-nav{
-padding-bottom: 20px;
-padding-top: 25px;
-
+.navbar-nav {
+  padding-bottom: 20px;
+  padding-top: 25px;
 }
+
 .site-header .navbar-nav .nav-link {
   color: #ffffff;
   font-family: 'Source Code Pro';
   font-weight: lighter;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .site-header .navbar-nav .nav-link:hover {
-color: #4b4b4b;
+  color: #4b4b4b;
 }
 
 .site-header .navbar-nav .nav-link.active {
@@ -56,8 +56,9 @@ color: #4b4b4b;
   margin-bottom: 20px;
 }
 
-.shadow{
-box-shadow: 5px 10px 18px #888888;}
+.shadow {
+  box-shadow: 5px 10px 18px #888888;
+}
 
 .article-title {
   color: #ededed;
@@ -147,3 +148,13 @@ a.article-title:hover {
   border: solid 1px #000000;
 }
 
+::-moz-selection {
+  /* Code for Firefox */
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+}
+
+::selection {
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+}
