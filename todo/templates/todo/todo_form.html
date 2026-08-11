@@ -7,6 +7,15 @@
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Todo</legend>
                 {{ form|crispy }}
+                <div class="form-group">
+                    <label for="due-date">Due Date</label>
+                    <div class="input-group date" id="due-date" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#due-date" name="due_date"/>
+                        <div class="input-group-append" data-target="#due-date" data-toggle="datetimepicker">
+                            <div class="input-group-text">Calendar</div>
+                        </div>
+                    </div>
+                </div>
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">Do it!</button>
